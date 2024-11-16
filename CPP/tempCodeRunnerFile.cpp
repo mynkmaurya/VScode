@@ -2,12 +2,13 @@
 using namespace std;
 int main ()
 {
-      int sum, a, n;
-      cin >> n;
-            sum = sum + (a*a);
-           for ( a = 1; a <= n; a++)
-           {
-              cout << sum;
-           }
-           
+   int n, i, f1 = 0, f2 = 1;
+      
+       for ( i = 0; i <= n; i++)
+       {
+       i = f1 + f2;
+       i + 1 = 
+       }
+            
+           return 0;
 }

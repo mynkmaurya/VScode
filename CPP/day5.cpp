@@ -1,10 +1,3 @@
-/*
-3. .
-4.
-5. 
-6. Print Sum of cube of first n natural number
-7. Print n’th Fibonacci number.
-*/
 #include <iostream>
 using namespace std;
 
@@ -54,17 +47,40 @@ cout << "Print char from ‘Z’ to ‘A’ with the help of a for loop";
         }
          case 5:{
             cout << "Print Sum of square of first n natural number.";
-            int sum, a;
-            sum += (a*a);
-           for
+               int sum, a, n;
+      sum = 0;
+      cin >> n;
+           
+           for ( a = 1; a <= n; a++)
+           {
+           
+            sum = sum + (a*a);
+              
+           }
+           cout << sum <<" \n";
             break;
         }
          case 6:
         {
+            cout << " Print Sum of cube of first n natural number";
+                 int sum, a, n;
+      sum = 0;
+      cin >> n;
+           
+           for ( a = 1; a <= n; a++)
+           {
+           
+            sum = sum + (a*a*a);
+              
+           }
+           cout << sum <<" \n";
             break;
         }
          case 7:
         {
+            cout << " Print n’th Fibonacci number";
+            int n, i, f1, f2;
+            
             break;
         }
         default: 
