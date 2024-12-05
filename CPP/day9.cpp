@@ -104,14 +104,15 @@ int main ()
 
       */
       int i, j;
-        for (= i = 4; i >= 4; i--)
+      char a = 'A';
+        for (i = 4; i >= 0; i--)
         {
           /* code */
-          for ( i = 0; i < count; i++)
+          for ( j = 0; j <= i ; j++)
           {
-            /* code */
+            cout << char('A' + j) << " ";
           }
-          
+          cout << endl;
         }
         
 
@@ -120,6 +121,7 @@ int main ()
     }
      
     default:
+    cout << "invalid choice";
         break;
     }
         

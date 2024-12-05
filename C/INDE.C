@@ -1,136 +1,133 @@
 #include <stdio.h>
 #include <stdlib.h>
-struct node {
+
+// Define the structure of a Node
+struct Node {
     int data;
-    struct node* next;
+    struct Node* left;
+    struct Node* right;
 };
-void InsertAtBeginning(struct node** head_ref, int new_data) {
-    struct node* new_node = (struct node*)malloc(sizeof(struct node));
-    new_node->data = new_data;
-    new_node->next = (*head_ref);
-    (*head_ref) = new_node;     }
-void InsertAtEnd(struct node** head_ref, int new_data) {
-    struct node* new_node = (struct node*)malloc(sizeof(struct node));
-    struct node* last = *head_ref;
-    new_node->data = new_data;
-    new_node->next = NULL; 
-    if (*head_ref == NULL) { 
-        *head_ref = new_node;
-        return;     }
-    while (last->next != NULL) { 
-        last = last->next;
+
+// Function to create a new node
+struct Node* createNode(int data) {
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    newNode->data = data;
+    newNode->left = newNode->right = NULL;
+    return newNode;
+}
+
+// Function to insert a node in the BST
+void insert(struct Node** root, int data) {
+    if (*root == NULL) {
+        *root = createNode(data);
+    } else {
+        if (data < (*root)->data) {
+            insert(&((*root)->left), data);
+        } else {
+            insert(&((*root)->right), data);
+        }
     }
-    last->next = new_node;  }
-void InsertAfter(struct node* head, int position) {
-    struct node* temp = head;
-    for (int i = 0; i < position - 1; i++) {
-        temp = temp->next;
-        if (temp == NULL) {
-            printf("Position does not exist!\n");
-            return;     }   }
-    struct node* new_node = (struct node*)malloc(sizeof(struct node));
-    printf("Enter data to insert: ");
-    scanf("%d", &new_node->data);
-    new_node->next = temp->next;  
-    temp->next = new_node;       }
-void DeleteFromBeginning(struct node** head_ref) {
-    if (*head_ref == NULL) {
-        printf("List is empty!\n");
-        return;     }
-    struct node* temp = *head_ref; 
-    *head_ref = (*head_ref)->next;  
-    free(temp);     }
-void DeleteFromEnd(struct node** head_ref) {
-    if (*head_ref == NULL) {
-        printf("List is empty!\n");
-        return; }
-    struct node* temp = *head_ref;
-    if (temp->next == NULL) { 
-        free(temp);
-        *head_ref = NULL;
-        return; }
-    while (temp->next->next != NULL) {  
-        temp = temp->next;
+}
+
+// Function to search for an element in the BST
+struct Node* search(struct Node* root, int data) {
+    if (root == NULL || root->data == data) {
+        return root;
     }
-    free(temp->next); 
-    temp->next = NULL;  }
-void DeleteFromPosition(struct node** head_ref, int position) {
-    if (*head_ref == NULL) {
-        printf("List is empty!\n");
-        return;     }
-    struct node* temp = *head_ref;
-    if (position == 1) {
-        *head_ref = temp->next;  
-        free(temp);
-        return;     }
-    for (int i = 1; temp != NULL && i < position - 1; i++) {
-        temp = temp->next;  }
-    if (temp == NULL || temp->next == NULL) {
-        printf("Position does not exist!\n");
-        return;     }
-    struct node* next_node = temp->next->next;
-    free(temp->next);
-    temp->next = next_node; }
-void PrintList(struct node* node) {
-    if (node == NULL) {
-        printf("List is empty!\n");
-        return; }
-    while (node != NULL) {
-        printf("%d -> ", node->data);
-        node = node->next;  }
-    printf("NULL\n");   }
+    if (data < root->data) {
+        return search(root->left, data);
+    } else {
+        return search(root->right, data);
+    }
+}
+
+// Preorder Traversal
+void preorderTraversal(struct Node* root) {
+    if (root != NULL) {
+        printf("%d ", root->data);
+        preorderTraversal(root->left);
+        preorderTraversal(root->right);
+    }
+}
+
+// Inorder Traversal
+void inorderTraversal(struct Node* root) {
+    if (root != NULL) {
+        inorderTraversal(root->left);
+        printf("%d ", root->data);
+        inorderTraversal(root->right);
+    }
+}
+
+// Postorder Traversal
+void postorderTraversal(struct Node* root) {
+    if (root != NULL) {
+        postorderTraversal(root->left);
+        postorderTraversal(root->right);
+        printf("%d ", root->data);
+    }
+}
+
 int main() {
-    struct node* head = NULL;
-    int ch, data, position;
+    struct Node* root = NULL;
+    int choice, value;
+
     do {
-        printf("\nLinked List Menu:\n");
-        printf("1. Insert at Beginning\n");
-        printf("2. Insert at End\n");
-        printf("3. Insert after a Given Position\n");
-        printf("4. Delete from Beginning\n");
-        printf("5. Delete from End\n");
-        printf("6. Delete from a Given Position\n");
-        printf("7. Print Linked List\n");
-        printf("8. Exit\n");
+        printf("\nBinary Tree Operations Menu:\n");
+        printf("1. Insert Node\n");
+        printf("2. Preorder Traversal\n");
+        printf("3. Inorder Traversal\n");
+        printf("4. Postorder Traversal\n");
+        printf("5. Search Element\n");
+        printf("6. Exit\n");
         printf("Enter your choice: ");
-        scanf("%d", &ch);
-        switch (ch) {
+        scanf("%d", &choice);
+
+        switch (choice) {
             case 1:
-                printf("Enter data to insert at beginning: ");
-                scanf("%d", &data);
-                InsertAtBeginning(&head, data);
+                printf("Enter the value to insert: ");
+                scanf("%d", &value);
+                insert(&root, value);
                 break;
+
             case 2:
-                printf("Enter data to insert at end: ");
-                scanf("%d", &data);
-                InsertAtEnd(&head, data);
-                break; 
+                printf("Preorder Traversal: ");
+                preorderTraversal(root);
+                printf("\n");
+                break;
+
             case 3:
-                printf("Enter the position after which to insert: ");
-                scanf("%d", &position);
-                printf("Enter data to insert: ");
-                scanf("%d", &data);
-                InsertAfter(head, data);
+                printf("Inorder Traversal: ");
+                inorderTraversal(root);
+                printf("\n");
                 break;
+
             case 4:
-                DeleteFromBeginning(&head);
+                printf("Postorder Traversal: ");
+                postorderTraversal(root);
+                printf("\n");
                 break;
+
             case 5:
-                DeleteFromEnd(&head);
+                printf("Enter the value to search: ");
+                scanf("%d", &value);
+                struct Node* result = search(root, value);
+                if (result != NULL) {
+                    printf("Element %d found in the tree.\n", result->data);
+                } else {
+                    printf("Element %d not found in the tree.\n", value);
+                }
                 break;
+
             case 6:
-                printf("Enter the position from which to delete: ");
-                scanf("%d", &position);
-                DeleteFromPosition(&head, position);
+                printf("Exiting...\n");
                 break;
-            case 7:
-                printf("The linked list is: ");
-                PrintList(head);
-                break;
-            case 8:
-                printf("Exiting program.\n");
-                break;   }
-    } while (ch != 8);
-    printf("The code is executed by MAYANK MAURYA");
-    printf("2300971640048\n");
-    return 0;       }
+
+            default:
+                printf("Invalid choice! Please try again.\n");
+        }
+    } while (choice != 6);
+
+    printf("Written By Mayank Maurya\n");
+    return 0;
+}
