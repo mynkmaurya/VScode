@@ -77,7 +77,7 @@ for chapter in chapters:
     doc.add_paragraph(content[chapter], style='Normal')
 
 # Save document
-file_path = "/mnt/data/Hair_Care_Website_Report_v2.docx"
+file_path = "C:\Users\mayan\Downloads\synopsis.pdf.pdf"
 doc.save(file_path)
 
 file_path

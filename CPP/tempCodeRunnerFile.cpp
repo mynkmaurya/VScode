@@ -11,20 +11,25 @@ int main()
       3 2 1
    4 3 2 1
 5 4 3 2 1          
-*/   int n, i, j;
+*/  
+  
+ int n, i, j, k;
  cout << " Take an input: ";
 cin >> n ;
  for ( i = 1; i <= n; i++)
  {
-    for ( j = i; j >= 1; j--)
+    cout << " ";
+    for ( j = 1; j <= (n + 10) - (i+2); j++)
     {
-        cout << "1";
+        cout << " ";
     }
+    for(k=i; k>=1; k--)
+ {
+   cout << k ;
+ }
      cout << endl;
  }
  
-  
-
     return 0;
 }
  

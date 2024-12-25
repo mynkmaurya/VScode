@@ -5,7 +5,7 @@ document.querySelectorAll('.faq-item').forEach(item => {
     });
   });
   // script.js
-
+   
 // Get all FAQ items
 const faqItems = document.querySelectorAll('.faq-item');
 
