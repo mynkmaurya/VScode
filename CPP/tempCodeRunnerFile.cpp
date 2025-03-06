@@ -5,7 +5,7 @@ int main()
 {
      /*
       First Pattern: Take an input n from the user, and create a pattern like below, for n=5, we have output like this.
-
+    
             1
          2 1
       3 2 1
@@ -14,22 +14,22 @@ int main()
 */  
   
  int n, i, j, k;
- cout << " Take an input: ";
-cin >> n ;
+cout << "Enter the value of n: ";
+ cin >> n;
  for ( i = 1; i <= n; i++)
  {
-    cout << " ";
-    for ( j = 1; j <= (n + 10) - (i+2); j++)
-    {
-        cout << " ";
-    }
-    for(k=i; k>=1; k--)
- {
-   cout << k ;
- }
-     cout << endl;
- }
- 
+   for (k = 1; k <= n-i; k++)
+    { 
+      cout << " "; 
+      }
+    
+    for ( j = i; j >= 1; j--)
+    {cout << j;
+       cout << " "; 
+      }
+    
+  
+   cout << endl; 
+   }
     return 0;
-}
- 
+  }                    

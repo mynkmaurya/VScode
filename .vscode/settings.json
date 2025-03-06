@@ -3,5 +3,7 @@
     "files.associations": {
         "iostream": "cpp",
         "INDE.C": "cpp"
-    }
+    },
+    "terminal.integrated.gpuAcceleration": "on",
+    "terminal.integrated.enableImages": true
 }
