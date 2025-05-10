@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://huly.io
+
+# Sitemaps
+Sitemap: https://huly.io/sitemap.xml
