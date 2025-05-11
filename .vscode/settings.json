@@ -2,7 +2,9 @@
     "C_Cpp.errorSquiggles": "disabled",
     "files.associations": {
         "iostream": "cpp",
-        "INDE.C": "cpp"
+        "INDE.C": "cpp",
+        "cmath": "cpp",
+        "random": "cpp"
     },
     "terminal.integrated.gpuAcceleration": "on",
     "terminal.integrated.enableImages": true
