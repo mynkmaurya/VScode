@@ -1,0 +1,12 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/VScode/build/cmake_install.cmake",
+		"C:/VScode/build/_deps/googletest-build/cmake_install.cmake",
+		"C:/VScode/build/_deps/googletest-build/googlemock/cmake_install.cmake",
+		"C:/VScode/build/_deps/googletest-build/googletest/cmake_install.cmake",
+		"C:/VScode/build/src/cmake_install.cmake",
+		"C:/VScode/build/test/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
