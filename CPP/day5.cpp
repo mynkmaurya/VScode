@@ -21,6 +21,7 @@ int main() {
             for ( i = 'A'; i <= 'Z'; i++)
             {
              cout << i << " ";
+             
             }
             break;
         }

@@ -599,7 +599,7 @@ CMAKE_TAPI-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //Details about finding Python
-FIND_PACKAGE_MESSAGE_DETAILS_Python:INTERNAL=[C:/Users/mayan/anaconda3/python.exe][found components: Interpreter ][v3.13.5()]
+FIND_PACKAGE_MESSAGE_DETAILS_Python:INTERNAL=[C:/Users/mayan/anaconda3/python.exe][found components: Interpreter ][v3.13.7()]
 //ADVANCED property for variable: GIT_EXECUTABLE
 GIT_EXECUTABLE-ADVANCED:INTERNAL=1
 //CMAKE_INSTALL_PREFIX during last run
@@ -613,7 +613,7 @@ _Python_EXECUTABLE:INTERNAL=C:/Users/mayan/anaconda3/python.exe
 //Path to a program.
 _Python_EXECUTABLE_DEBUG:INTERNAL=_Python_EXECUTABLE_DEBUG-NOTFOUND
 //Python Properties
-_Python_INTERPRETER_PROPERTIES:INTERNAL=Python;3;13;5;64;32;<none>;cp313-win_amd64;;C:\Users\mayan\anaconda3\Lib;C:\Users\mayan\anaconda3\Lib;C:\Users\mayan\anaconda3\Lib\site-packages;C:\Users\mayan\anaconda3\Lib\site-packages
+_Python_INTERPRETER_PROPERTIES:INTERNAL=Python;3;13;7;64;32;<none>;cp313-win_amd64;;C:\Users\mayan\anaconda3\Lib;C:\Users\mayan\anaconda3\Lib;C:\Users\mayan\anaconda3\Lib\site-packages;C:\Users\mayan\anaconda3\Lib\site-packages
 _Python_INTERPRETER_SIGNATURE:INTERNAL=ed73624c37d58cff93204ede0747ae2b
 //NumPy reason failure
 _Python_NumPy_REASON_FAILURE:INTERNAL=
