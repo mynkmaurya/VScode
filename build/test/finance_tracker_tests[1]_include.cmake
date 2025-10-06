@@ -1,5 +1,0 @@
-if(EXISTS "C:/VScode/build/test/finance_tracker_tests[1]_tests.cmake")
-  include("C:/VScode/build/test/finance_tracker_tests[1]_tests.cmake")
-else()
-  add_test(finance_tracker_tests_NOT_BUILT finance_tracker_tests_NOT_BUILT)
-endif()
