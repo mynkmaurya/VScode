@@ -52,6 +52,6 @@ int main()
 {
 	vector<int> candies = {5, 8, 6};
 	int k = 3; // number of children
-	cout << "Maximum candies each child can get: " << maximumCandies(candies, k) << endl;
+	cout << "Maximum candies each child can get: " << maximumCandies(candies, k ) << endl;""
 	return 0;
 }
